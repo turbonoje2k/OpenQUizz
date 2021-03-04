@@ -11,7 +11,6 @@ class ViewController: UIViewController {
     
     var game = Game()
     
-    
     @IBOutlet weak internal var
         newGameButton: UIButton!
     
@@ -35,6 +34,7 @@ class ViewController: UIViewController {
    @objc  func questionLoaded() {
     activityIndicator.isHidden = true
     newGameButton.isHidden = false
+    questionView.title = game.currentQuestion.title
     }
     
     private func startNewGame() {
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         
         questionView.title = "Loading..."
         questionView.style = .standard
-        questionView.title = game.currentQuestion.title
+//        questionView.title = game.currentQuestion.title
         
         scoreLabel.text = "0 / 10"
         
