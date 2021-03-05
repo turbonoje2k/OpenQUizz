@@ -11,18 +11,10 @@ class ViewController: UIViewController {
     
     
     
-    @IBOutlet weak internal var
-        newGameButton: UIButton!
-    
-    @IBOutlet weak internal var
-        questionView:
-            QuestionView!
-    
-    @IBOutlet weak internal var
-        scoreLabel: UILabel!
-    
-    @IBOutlet weak internal var
-        activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak internal var newGameButton: UIButton!
+    @IBOutlet weak internal var questionView: QuestionView!
+    @IBOutlet weak internal var scoreLabel: UILabel!
+    @IBOutlet weak internal var activityIndicator: UIActivityIndicatorView!
     
     var game = Game()
     
@@ -30,22 +22,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let name = Notification.Name(rawValue: "QuestionLoaded")
         NotificationCenter.default.addObserver(self, selector: #selector(questionLoaded), name: name, object: nil)
+        
         startNewGame()
         
         let panGestureRecognizer = UIPanGestureRecognizer(target: self,
                                                           action: #selector(dragQuestionView(_:)))
         questionView.addGestureRecognizer(panGestureRecognizer)
-        
     }
     
     @IBAction func didTapNewGameButton() {
         startNewGame()
-    }
-    
-    @objc  func questionLoaded() {
-        activityIndicator.isHidden = true
-        newGameButton.isHidden = false
-        questionView.title = game.currentQuestion.title
     }
     
     private func startNewGame() {
@@ -60,6 +46,12 @@ class ViewController: UIViewController {
         
         game.refresh()
         
+    }
+    
+    @objc  func questionLoaded() {
+        activityIndicator.isHidden = true
+        newGameButton.isHidden = false
+        questionView.title = game.currentQuestion.title
     }
     
     @objc func dragQuestionView(_ sender: UIPanGestureRecognizer) {
@@ -78,6 +70,7 @@ class ViewController: UIViewController {
     private func transformQuestionViewWith(gesture:
                                             UIPanGestureRecognizer) {
         let translation = gesture.translation(in: questionView)
+        
         let translationTransform = CGAffineTransform(translationX: translation.x, y: translation.y)
         
         let screenWidht = UIScreen.main.bounds.width
@@ -116,18 +109,19 @@ class ViewController: UIViewController {
             translationTransform = CGAffineTransform(translationX: screenWidht, y: 0)
         }
         
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.3, animations: {
             self.questionView.transform = translationTransform
-        } completion: { (success) in
+        }, completion: { (success) in
             if success {
                 self.showQuestionView()
             }
-        }
+        })
     }
     
     private func showQuestionView() {
         questionView.transform = .identity
         questionView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        
         questionView.style = .standard
         
         switch game.state {
