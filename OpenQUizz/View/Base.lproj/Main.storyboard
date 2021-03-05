@@ -20,9 +20,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mq-gg-ezo">
-                                <rect key="frame" x="105" y="725" width="205" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mq-gg-ezo">
+                                <rect key="frame" x="152" y="638" width="110" height="35"/>
                                 <color key="backgroundColor" red="0.40342378620000002" green="0.55294817689999998" blue="0.76473319529999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="Balham" family="Balham" pointSize="23"/>
                                 <state key="normal" title="New Game">
@@ -32,42 +31,61 @@
                                     <action selector="didTapNewGameButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="tsW-r5-Brs"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ToM-uY-zOO">
-                                <rect key="frame" x="197" y="747" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FHo-ve-yUV" customClass="QuestionView" customModule="OpenQUizz" customModuleProvider="target">
-                                <rect key="frame" x="85" y="80" width="245" height="245"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHo-ve-yUV" customClass="QuestionView" customModule="OpenQUizz" customModuleProvider="target">
+                                <rect key="frame" x="85" y="80" width="244" height="245"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Où est charlie" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vph-8s-vKq">
-                                        <rect key="frame" x="8" y="8" width="229" height="229"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Où est charlie" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vph-8s-vKq">
+                                        <rect key="frame" x="8" y="8" width="228" height="229"/>
                                         <fontDescription key="fontDescription" name="Balham" family="Balham" pointSize="23"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Icon Correct" translatesAutoresizingMaskIntoConstraints="NO" id="zi0-EM-rd7">
-                                        <rect key="frame" x="94" y="186" width="57" height="51"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Icon Correct" translatesAutoresizingMaskIntoConstraints="NO" id="zi0-EM-rd7">
+                                        <rect key="frame" x="104" y="202" width="36" height="35"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.75290167330000002" green="0.76838868859999998" blue="0.78431618209999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="vph-8s-vKq" firstAttribute="centerX" secondItem="zi0-EM-rd7" secondAttribute="centerX" id="2BC-qU-VvC"/>
+                                    <constraint firstItem="vph-8s-vKq" firstAttribute="bottom" secondItem="zi0-EM-rd7" secondAttribute="bottom" id="6tY-sf-VLf"/>
+                                    <constraint firstItem="vph-8s-vKq" firstAttribute="leading" secondItem="FHo-ve-yUV" secondAttribute="leadingMargin" id="7Mj-8o-yWt"/>
+                                    <constraint firstItem="vph-8s-vKq" firstAttribute="top" secondItem="FHo-ve-yUV" secondAttribute="topMargin" id="ONj-Zy-ILt"/>
+                                    <constraint firstItem="vph-8s-vKq" firstAttribute="bottom" secondItem="FHo-ve-yUV" secondAttribute="bottomMargin" id="kJQ-jK-E5m"/>
+                                    <constraint firstItem="vph-8s-vKq" firstAttribute="centerX" secondItem="FHo-ve-yUV" secondAttribute="centerX" id="va0-v6-0gp"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="icon" destination="zi0-EM-rd7" id="irS-5B-OUV"/>
                                     <outlet property="label" destination="vph-8s-vKq" id="rfC-Pd-SWN"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 / 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGY-M0-NC6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGY-M0-NC6">
                                 <rect key="frame" x="57" y="341" width="300" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="hYQ-wh-MHA"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Balham" family="Balham" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ToM-uY-zOO">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.35670185090000001" green="0.4182091355" blue="0.50197273490000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="FHo-ve-yUV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="3T4-2Z-7Dt"/>
+                            <constraint firstItem="ToM-uY-zOO" firstAttribute="top" secondItem="zGY-M0-NC6" secondAttribute="bottom" constant="28.5" id="5tb-DB-h8Y"/>
+                            <constraint firstItem="zGY-M0-NC6" firstAttribute="centerX" secondItem="FHo-ve-yUV" secondAttribute="centerX" id="7AK-nh-cvi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8mq-gg-ezo" secondAttribute="bottom" constant="189" id="7hk-qh-hIu"/>
+                            <constraint firstItem="zGY-M0-NC6" firstAttribute="centerX" secondItem="ToM-uY-zOO" secondAttribute="centerX" id="BXU-0P-bIR"/>
+                            <constraint firstItem="zGY-M0-NC6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="Bde-Ux-lMK"/>
+                            <constraint firstItem="zGY-M0-NC6" firstAttribute="centerX" secondItem="8mq-gg-ezo" secondAttribute="centerX" id="Jv0-JG-UuX"/>
+                            <constraint firstItem="zGY-M0-NC6" firstAttribute="top" secondItem="FHo-ve-yUV" secondAttribute="bottom" constant="16" id="Zdn-yQ-2eA"/>
+                            <constraint firstItem="zGY-M0-NC6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="al3-fV-9Ux"/>
+                            <constraint firstItem="FHo-ve-yUV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="85" id="pZM-Jy-3aT"/>
+                            <constraint firstItem="zGY-M0-NC6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="341" id="zWX-6P-a4r"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="ToM-uY-zOO" id="b8g-qb-1ei"/>
