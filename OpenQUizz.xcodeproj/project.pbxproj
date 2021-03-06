@@ -69,7 +69,6 @@
 				DC4EC93525F02E5D00350E94 /* Info.plist */,
 				DC4EC94225F039F400350E94 /* Supporting Files */,
 				DC4EC93F25F038F500350E94 /* Model */,
-				DC4EC92925F02E5C00350E94 /* SceneDelegate.swift */,
 				DC4EC94025F038FB00350E94 /* View */,
 				DC4EC94125F0390100350E94 /* Controller */,
 			);
@@ -106,6 +105,7 @@
 		DC4EC94225F039F400350E94 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DC4EC92925F02E5C00350E94 /* SceneDelegate.swift */,
 				DC4EC92725F02E5C00350E94 /* AppDelegate.swift */,
 				DC4EC93025F02E5D00350E94 /* Assets.xcassets */,
 				DC4EC93C25F0317200350E94 /* Balham.otf */,
