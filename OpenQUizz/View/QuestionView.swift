@@ -39,7 +39,7 @@ class QuestionView: UIView {
             backgroundColor = UIColor(red: 191.0/255.0,
                                       green: 196.0/255.0,
                                       blue: 201.0/255.0,
-                                      alpha: 1)
+                                      Suppoalpha: 1)
             icon.isHidden = true
         }
     }
